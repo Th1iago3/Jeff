@@ -1,3 +1,7 @@
+################################## VEF. DEPEDENCIAS ################################## 
+import sys
+import subprocess
+
 ################################## BIBLIOTECAS ################################## 
 import os
 import sys
@@ -14,3 +18,14 @@ import httpx
 from colorama import init as colorama_init, Fore, Style
 ################################## INICIAR COLORAMA ################################## 
 colorama_init(autoreset=True) 
+################################## INSTALAR DEP. NECESSARIOAS ################################## 
+def dep():
+  dep = {
+    "discord",
+    "discord.ext",
+    "colorama",
+    "httpx"    
+  }
+  dep_faltando = []
+  for pacote in dep:
+  
