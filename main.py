@@ -44,5 +44,5 @@ colorama_init(autoreset=True)
 
 ################################## EXECUÇÃO VIA LOADER ################################## 
 if __name__ == "__main__":
-    from src.loader import Loader
+    from cogs.loader import Loader
     Loader().run()
