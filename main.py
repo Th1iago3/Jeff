@@ -1,12 +1,13 @@
 ################################## VEF. DEPEDENCIAS ################################## 
 import sys
 import subprocess
-################################## INSTALAR DEP. NECESSARIOAS ################################## 
+################################## INSTALAR DEP. NECESSARIAS ################################## 
 def dep():
   dep = {
     "discord",
     "colorama",
-    "httpx"    
+    "httpx",
+    "dotenv"    
   }
   dep_faltando = []
   for pacote in dep:
@@ -17,11 +18,12 @@ def dep():
 
 if dep_faltando:
   print(f"[INFO]: Instalando: {', '.join(dep_faltando)}")
-  subprocess.check_cal([sys.executable, "-m", "pip", "install"] + dep_faltando)
+  subprocess.check_call([sys.executable, "-m", "pip", "install"] + dep_faltando)
   print(f"[INFO]: Tudo pronto!")
   sys.exit(0)
 
 dep()
+
 ################################## BIBLIOTECAS ################################## 
 import os
 import sys
@@ -36,5 +38,11 @@ from discord.ext import commands
 from discord import app_commands
 import httpx
 from colorama import init as colorama_init, Fore, Style
+
 ################################## INICIAR COLORAMA ################################## 
-colorama_init(autoreset=True)
+colorama_init(autoreset=True) 
+
+################################## EXECUÇÃO VIA LOADER ################################## 
+if __name__ == "__main__":
+    from src.loader import Loader
+    Loader().run()
