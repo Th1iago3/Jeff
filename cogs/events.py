@@ -12,9 +12,10 @@ from colorama import Fore, Style
 # ------------------------------------------------------------------
 # CONFIGS
 # ------------------------------------------------------------------
-BASE_DIR = Path(__file__).resolve().parent
-ENV_PATH = BASE_DIR.parent / "infos_secrets.env"
-CONFIG_PATH = BASE_DIR / "assets" / "config.json"
+BASE_DIR = Path(__file__).resolve().parent.parent
+ASSETS_DIR = BASE_DIR / "src" / "assets"
+ENV_PATH = ASSETS_DIR / "infos_secrets.env"
+CONFIG_PATH = ASSETS_DIR / "config.json"
 
 load_dotenv(ENV_PATH)
 
@@ -38,9 +39,6 @@ class SystemMonitor(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # ------------------------------------------------------------------
-    # ON_READY: Logs de Init.
-    # ------------------------------------------------------------------
     @commands.Cog.listener()
     async def on_ready(self):
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -68,9 +66,6 @@ class SystemMonitor(commands.Cog):
             
         print(f"{Fore.CYAN}{'='*50}{Style.RESET_ALL}")
 
-    # ------------------------------------------------------------------
-    # ON_MESSAGE: Log de Chat
-    # ------------------------------------------------------------------
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author == self.bot.user:
@@ -84,16 +79,10 @@ class SystemMonitor(commands.Cog):
         
         print(f"{Fore.WHITE}[{Fore.BLUE}{ts}{Fore.WHITE}] {cor_autor}{message.author.name}{Fore.WHITE}: {conteudo}")
 
-    # ------------------------------------------------------------------
-    # ON_COMMAND_ERROR: Log de Erros
-    # ------------------------------------------------------------------
     @commands.Cog.listener()
     async def on_app_command_error(self, interaction, error):
         print(f"{Fore.RED}[ERRO CMD] /{interaction.command.name} por {interaction.user.name}: {error}{Style.RESET_ALL}")
 
-    # ------------------------------------------------------------------
-    # GUILD EVENTS
-    # ------------------------------------------------------------------
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
         print(f"{Fore.GREEN}[+] Enter: {guild.name} ({guild.id}){Style.RESET_ALL}")
