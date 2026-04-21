@@ -26,12 +26,14 @@ class Loader:
                     print(f"{Fore.RED}[LOADER] ERRO: {filename} -> {e}{Style.RESET_ALL}")
 
     def run(self):
-        env_path = self.cogs_path.parent / "infos_secrets.env"
+        assets_dir = self.cogs_path.parent / "src" / "assets"
+        env_path = assets_dir / "infos_secrets.env"
+        
         load_dotenv(env_path)
         token = os.getenv("TOKEN")
         
         if not token:
-            print(f"{Fore.RED}[CRITICAL] Token não encontrado em infos_secrets.env{Style.RESET_ALL}")
+            print(f"{Fore.RED}[CRITICAL] Token não encontrado em src/assets/infos_secrets.env{Style.RESET_ALL}")
             sys.exit(1)
             
         self.load_cogs()
