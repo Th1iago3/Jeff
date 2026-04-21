@@ -1,1 +1,18 @@
-
+{
+   "token": "MTQ5NjIxODA5Mjc3NzUwNDkwOA.GA9tq7.5c1rArX8g9M4eLU0YZBpXIPoQ9_-YQ9DRrF1ZU",
+   "server_id": "1396868698739839028",
+   "moderadores": [
+        882778726562156614,
+        786996965836587029,
+        1258734114312552523
+    ],
+    "cores_embed": {
+        "principal": "#89CFF0",
+        "sucesso": "#00FF00",
+        "erro": "#FF0000",
+        "aviso": "#FFA500"
+    },
+    "comandos": {
+       "prefixo": "/"
+    }
+}
