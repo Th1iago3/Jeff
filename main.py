@@ -15,12 +15,12 @@ def dep():
       __import__(pacote.replace("-", "_"))
     except ImportError:
       dep_faltando.append(pacote)
-
-if dep_faltando:
-  print(f"[INFO]: Instalando: {', '.join(dep_faltando)}")
-  subprocess.check_call([sys.executable, "-m", "pip", "install"] + dep_faltando)
-  print(f"[INFO]: Tudo pronto!")
-  sys.exit(0)
+  
+  if dep_faltando:
+    print(f"[INFO]: Instalando: {', '.join(dep_faltando)}")
+    subprocess.check_call([sys.executable, "-m", "pip", "install"] + dep_faltando)
+    print(f"[INFO]: Tudo pronto!")
+    sys.exit(0)
 
 dep()
 
