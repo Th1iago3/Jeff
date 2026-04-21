@@ -12,7 +12,5 @@ from discord.ext import commands
 from discord import app_commands
 import httpx
 from colorama import init as colorama_init, Fore, Style
-
-
 ################################## INICIAR COLORAMA ################################## 
 colorama_init(autoreset=True) 
