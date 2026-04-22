@@ -23,7 +23,6 @@ def dep():
     sys.exit(0)
 
 dep()
-
 ################################## BIBLIOTECAS ################################## 
 import os
 import sys
@@ -38,10 +37,8 @@ from discord.ext import commands
 from discord import app_commands
 import httpx
 from colorama import init as colorama_init, Fore, Style
-
 ################################## INICIAR COLORAMA ################################## 
 colorama_init(autoreset=True) 
-
 ################################## EXECUÇÃO VIA LOADER ################################## 
 if __name__ == "__main__":
     from cogs.loader import Loader
