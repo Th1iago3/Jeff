@@ -11,7 +11,7 @@
         "erro": "#FF0000",
         "aviso": "#FFA500"
     },
-    "comandos": {
-       "prefixo": "/"
-    }
+   "comandos":[
+      "ping"
+   ]
 }
