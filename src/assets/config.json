@@ -1,6 +1,6 @@
 {
    "server_id": "ID_DO_SEU_SERVIDOR",
-   "moderadores": ["ID"],
+   "moderadores": ["IDS_AQUI"],
     "cores_embed": {
         "principal": "#89CFF0",
         "sucesso": "#00FF00",
