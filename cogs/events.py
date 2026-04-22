@@ -42,14 +42,23 @@ class SystemMonitor(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         os.system('cls' if os.name == 'nt' else 'clear')
-        guild = self.bot.get_guild(SERVER_ID)
-        
+        guild = self.bot.get_guild(SERVER_ID
+        perms = self.bot.application_info().scopes
+        try:
+            app_info = await self.bot.application_info()
+            client_id = app_info.id
+            perms_int = 8 # 8 = adminstrador, NAO MEXE NISSO AQUI.
+            invite_url = f"https://discord.com/api/oauth2/authorize?client_id={client_id}&permissions={perms_int}&scope=bot%20applications.commands"
+        except Exception:
+            invite_url = "Invite indisponível"
+
         print(f"{Fore.CYAN}{'='*50}")
         print(f"{Fore.CYAN}       SISTEMA ONLINE")
         print(f"{Fore.CYAN}{'='*50}{Style.RESET_ALL}")
         print(f"{Fore.WHITE}[+] Bot: {Fore.GREEN}{self.bot.user}")
         print(f"{Fore.WHITE}[+] ID: {Fore.YELLOW}{self.bot.user.id}")
         print(f"{Fore.WHITE}[+] Hora: {Fore.BLUE}{datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+        print(f"{Fore.WHITE}[+] Invite: {Fore.LIGHTBLUE_EX}{invite_url}")
         
         if guild:
             print(f"{Fore.WHITE}[+] Server: {Fore.MAGENTA}{guild.name} ({guild.id})")
