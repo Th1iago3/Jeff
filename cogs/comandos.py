@@ -11,45 +11,34 @@ BASE = Path(__file__).resolve().parent.parent
 CFG = BASE / "src" / "assets" / "config.json"
 
 def ler_cfg():
-    with open(CFG, "r", encoding="utf-8") as f:
-        return json.load(f)
-          
+    try:
+        with open(CFG, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
 dados = ler_cfg()
 SID = dados.get("server_id")
-LISTA_CMD = dados.get("comandos", [])
+LISTA_CMD = dados.get("comandos", ["ping"])
 # ==================================================================
 # CLASSE
 # ==================================================================
 class CmdBase(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.tree = bot.tree
-        self.alvo = discord.Object(id=SID)
-    # ==================================================================
-    # INIT E SYNC
-    # ==================================================================
+
     async def cog_load(self):
-        await self.limpar_velhos()
-        await self.sincronizar()
+        print(f"{Fore.GREEN}[CMD] Cog de comandos carregada.{Style.RESET_ALL}")
 
-    async def limpar_velhos(self):
-        self.tree.clear_commands(guild=self.alvo)
-        print(f"{Fore.YELLOW}[CMD] Limpeza feita{Style.RESET_ALL}")
-
-    async def sincronizar(self):
-        await self.tree.sync(guild=self.alvo)
-        print(f"{Fore.GREEN}[CMD] Sync completo{Style.RESET_ALL}")
-    # ==================================================================
-    # COMANDOS
-    # ==================================================================
-    @app_commands.command(name="ping", description="teste rapido")
+    @app_commands.command(name="ping", description="Teste de latência")
     async def cmd_ping(self, inter: discord.Interaction):
         if "ping" not in LISTA_CMD:
-            await inter.response.send_message("cmd off no config", ephemeral=True)
+            await inter.response.send_message("Comando desativado.", ephemeral=True)
             return
 
         ms = round(self.bot.latency * 1000)
-        await inter.response.send_message(f"pong! {ms}ms", ephemeral=True)
+        await inter.response.send_message(f"🏓 Pong! `{ms}ms`", ephemeral=True)
 
 async def setup(bot):
     await bot.add_cog(CmdBase(bot))
+    print(f"{Fore.GREEN}[CMD] Cog de comandos carregada.{Style.RESET_ALL}")
