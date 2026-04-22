@@ -38,4 +38,15 @@ class Loader:
             
         self.load_cogs()
         print(f"{Fore.YELLOW}[LOADER] Conectando...{Style.RESET_ALL}")
-        self.bot.run(token)
+        try:
+            self.bot.run(token)
+        except Exception as e:
+            if e == "Improper token has been passed.":
+                print(f"{Fore.RED}[CRITICAL] Token inválido. Verifique src/assets/infos_secrets.env{Style.RESET_ALL}")
+            else:
+                print(f"{Fore.RED}[CRITICAL] Erro ao iniciar o bot: {e}{Style.RESET_ALL}")
+            sys.exit(1)
+
+if __name__ == "__main__":
+    loader = Loader()
+    loader.run()
