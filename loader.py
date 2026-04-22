@@ -17,8 +17,6 @@ class Loader:
 
     async def _load_cogs_async(self):
         print(f"{Fore.YELLOW}[LOADER] Varrendo cogs...{Style.RESET_ALL}")
-        
-        # Garante que a pasta cogs existe
         if not self.cogs_path.exists():
             print(f"{Fore.RED}[LOADER] Pasta cogs não encontrada!{Style.RESET_ALL}")
             return
