@@ -50,7 +50,7 @@ class SystemMonitor(commands.Cog):
             perms_int = 8 # 8 = adminstrador, NAO MEXE NISSO AQUI.
             invite_url = f"https://discord.com/api/oauth2/authorize?client_id={client_id}&permissions={perms_int}&scope=bot%20applications.commands"
         except Exception:
-            invite_url = "Invite indisponível"
+            invite_url = "indisponivel"
 
         print(f"{Fore.CYAN}{'='*50}")
         print(f"{Fore.CYAN}       SISTEMA ONLINE")
@@ -71,7 +71,7 @@ class SystemMonitor(commands.Cog):
                     
             print(f"{Fore.WHITE}[+] Mods Online: {Fore.GREEN}{', '.join(mods_online) if mods_online else 'Nenhum'}")
         else:
-            print(f"{Fore.RED}[!] Servidor ID {SERVER_ID} não encontrado.{Style.RESET_ALL}")
+            print(f"{Fore.RED}[!] Servidor ID {SERVER_ID} nao encontrado.{Style.RESET_ALL}")
             
         print(f"{Fore.CYAN}{'='*50}{Style.RESET_ALL}")
 
