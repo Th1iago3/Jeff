@@ -1,10 +1,6 @@
 {
-   "server_id": "1396868698739839028",
-   "moderadores": [
-        882778726562156614,
-        786996965836587029,
-        1258734114312552523
-    ],
+   "server_id": "ID_DO_SEU_SERVIDOR",
+   "moderadores": ["ID"],
     "cores_embed": {
         "principal": "#89CFF0",
         "sucesso": "#00FF00",
