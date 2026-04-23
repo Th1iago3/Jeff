@@ -17,10 +17,10 @@ Edite `res/assets/config.json` com suas informações:
 
 ### 3. Iniciar
 ```bash
-bash iniciar.sh
+sh iniciar.sh
 ```
 
-## 📁 Estrutura
+## Estrutura
 
 ```
 Jeff/
