@@ -11,7 +11,7 @@ from colorama import Fore, Style
 # CONFIGS
 # ------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
-ASSETS_DIR = BASE_DIR / "src" / "assets"
+ASSETS_DIR = BASE_DIR / "res" / "assets"
 ENV_PATH = ASSETS_DIR / "infos_secrets.env"
 CONFIG_PATH = ASSETS_DIR / "config.json"
 
@@ -76,7 +76,7 @@ class SystemMonitor(commands.Cog):
             print(f"{Fore.WHITE}[+] Mods Online: {Fore.GREEN}{', '.join(mods_online) if mods_online else 'Nenhum'}")
         else:
             if SERVER_ID:
-                print(f"{Fore.RED}[!] Servidor ID {SERVER_ID} não encontrado.{Style.RESET_ALL}")
+                print(f"{Fore.RED}[!] Servidor ID: >>{SERVER_ID}<< não encontrado.{Style.RESET_ALL}")
             else:
                 print(f"{Fore.YELLOW}[!] server_id não configurado.{Style.RESET_ALL}")
                 
