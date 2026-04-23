@@ -1,30 +1,7 @@
-################################## VEF. DEPEDENCIAS ################################## 
-import sys
-import subprocess
-import importlib.util
-################################## INSTALAR DEP. NECESSARIAS ################################## 
-def dep():
-  dep_map = {
-    "discord": "discord.py",
-    "colorama": "colorama",
-    "httpx": "httpx",
-    "dotenv": "python-dotenv"    
-  }
-  dep_faltando = []
-  for modulo, pacote in dep_map.items():
-    if importlib.util.find_spec(modulo) is None:
-      dep_faltando.append(pacote)
-  
-  if dep_faltando:
-    print(f"[INFO]: Instalando dependencias: {', '.join(dep_faltando)}")
-    subprocess.check_call([sys.executable, "-m", "pip", "install"] + dep_faltando)
-    print(f"[INFO]: Instalação concluida. Reiniciando...")
-    os.execv(sys.executable, [sys.executable] + sys.argv)
+import instl
+instl.dep()
 
-dep()
-################################## BIBLIOTECAS ################################## 
 import os
-import sys
 import json
 import asyncio
 import threading
@@ -36,9 +13,9 @@ from discord.ext import commands
 from discord import app_commands
 import httpx
 from colorama import init as colorama_init, Fore, Style
-################################## INICIAR COLORAMA ################################## 
-colorama_init(autoreset=True) 
-################################## EXEC. VIA LOADER ################################## 
+
+colorama_init(autoreset=True)
+
 if __name__ == "__main__":
     from loader import Loader
     try:
@@ -46,4 +23,5 @@ if __name__ == "__main__":
         bot_app.run()
     except Exception as e:
         print(f"{Fore.RED}[CRITICO] Erro fatal: {e}{Style.RESET_ALL}")
+        import sys
         sys.exit(1)
