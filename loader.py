@@ -31,11 +31,11 @@ class Loader:
                     print(f"{Fore.RED}[LOADER] ERRO: {filename} -> {e}{Style.RESET_ALL}")
 
     def run(self):
-        assets_dir = Path(__file__).parent / "src" / "assets"
+        assets_dir = Path(__file__).parent / "res" / "assets"
         env_path = assets_dir / "infos_secrets.env"
         
         if not env_path.exists():
-            print(f"{Fore.RED}[CRITICAL] Token não encontrado em src/assets/infos_secrets.env{Style.RESET_ALL}")
+            print(f"{Fore.RED}[CRITICAL] Token nao encontrado em res/assets/infos_secrets.env{Style.RESET_ALL}")
             sys.exit(1)
             
         load_dotenv(env_path)
@@ -53,7 +53,7 @@ class Loader:
             print(f"{Fore.YELLOW}[LOADER] Conectando...{Style.RESET_ALL}")
             self.bot.run(token)
         except discord.LoginFailure:
-            print(f"{Fore.RED}[AUTH] Token inválido. Verifique o infos_secrets.env{Style.RESET_ALL}")
+            print(f"{Fore.RED}[AUTH] Token invalido. Verifique o .env{Style.RESET_ALL}")
         except KeyboardInterrupt:
             print(f"\n{Fore.YELLOW}[SISTEMA] Desligamento manual.{Style.RESET_ALL}")
         finally:
