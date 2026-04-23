@@ -8,7 +8,7 @@ from colorama import Fore, Style
 # CONFIG
 # ==================================================================
 BASE = Path(__file__).resolve().parent.parent
-CFG = BASE / "src" / "assets" / "config.json"
+CFG = BASE / "res" / "assets" / "config.json"
 
 def ler_cfg():
     try:
