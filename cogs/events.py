@@ -76,9 +76,9 @@ class SystemMonitor(commands.Cog):
             print(f"{Fore.WHITE}[+] Mods Online: {Fore.GREEN}{', '.join(mods_online) if mods_online else 'Nenhum'}")
         else:
             if SERVER_ID:
-                print(f"{Fore.RED}[!] Servidor ID: >>{SERVER_ID}<< não encontrado.{Style.RESET_ALL}")
+                print(f"{Fore.RED}[!] Servidor: >>{SERVER_ID}<< nao encontrado.{Style.RESET_ALL}")
             else:
-                print(f"{Fore.YELLOW}[!] server_id não configurado.{Style.RESET_ALL}")
+                print(f"{Fore.YELLOW}[!] server_id nao configurado.{Style.RESET_ALL}")
                 
         print(f"{Fore.CYAN}{'='*50}{Style.RESET_ALL}")
 

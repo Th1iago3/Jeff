@@ -12,7 +12,7 @@ class Loader:
         self.intents = discord.Intents.default()
         self.intents.message_content = True
         self.intents.members = True
-        self.bot = commands.Bot(command_prefix="/", intents=self.intents)
+        self.bot = commands.Bot(command_prefix="!", intents=self.intents)
         self.cogs_path = Path(__file__).parent / "cogs"
 
     async def _load_cogs_async(self):
