@@ -16,9 +16,9 @@ def dep():
       dep_faltando.append(pacote)
   
   if dep_faltando:
-    print(f"[INFO]: Instalando dependências: {', '.join(dep_faltando)}")
+    print(f"[INFO]: Instalando dependencias: {', '.join(dep_faltando)}")
     subprocess.check_call([sys.executable, "-m", "pip", "install"] + dep_faltando)
-    print(f"[INFO]: Instalação concluída. Reiniciando...")
+    print(f"[INFO]: Instalação concluida. Reiniciando...")
     os.execv(sys.executable, [sys.executable] + sys.argv)
 
 dep()
@@ -45,5 +45,5 @@ if __name__ == "__main__":
         bot_app = Loader()
         bot_app.run()
     except Exception as e:
-        print(f"{Fore.RED}[CRÍTICO] Erro fatal: {e}{Style.RESET_ALL}")
+        print(f"{Fore.RED}[CRITICO] Erro fatal: {e}{Style.RESET_ALL}")
         sys.exit(1)
