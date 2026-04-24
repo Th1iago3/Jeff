@@ -9,7 +9,7 @@ python3 instl.py
 Edite `res/assets/config.json` com suas informações:
 ```json
 {
-  "server_id": "seu_id_do_servidor",
+  "server_id": "id_do_seu_servidor",
   "moderadores": ["ids_dos_moderadores"],
   "comandos": ["ping", "help"]
 }
@@ -17,15 +17,16 @@ Edite `res/assets/config.json` com suas informações:
 
 ### 3. Iniciar
 ```bash
-bash iniciar.sh
+sh iniciar.sh
 ```
 
-## 📁 Estrutura
+## Estrutura
 
 ```
 Jeff/
 ├── main.py              # Ponto de entrada
 ├── loader.py            # Carregador de módulos
+├── instl.py            # Instalador das bibliotecas
 ├── cogs/                # Módulos funcionais
 │   ├── comandos.py      # Comandos gerais
 │   ├── comandos_adm.py  # Comandos administrativos
