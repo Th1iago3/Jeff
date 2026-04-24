@@ -26,6 +26,7 @@ sh iniciar.sh
 Jeff/
 ├── main.py              # Ponto de entrada
 ├── loader.py            # Carregador de módulos
+├── instl.py            # Instalador das bibliotecas
 ├── cogs/                # Módulos funcionais
 │   ├── comandos.py      # Comandos gerais
 │   ├── comandos_adm.py  # Comandos administrativos
