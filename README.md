@@ -9,7 +9,7 @@ python3 instl.py
 Edite `res/assets/config.json` com suas informações:
 ```json
 {
-  "server_id": "seu_id_do_servidor",
+  "server_id": "id_do_seu_servidor",
   "moderadores": ["ids_dos_moderadores"],
   "comandos": ["ping", "help"]
 }
