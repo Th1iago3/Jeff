@@ -4,9 +4,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from colorama import Fore, Style
-# ==================================================================
-# CONFIG
-# ==================================================================
+# ------------- CONFIG ------------- #
 BASE = Path(__file__).resolve().parent.parent
 CFG = BASE / "res" / "assets" / "config.json"
 
@@ -20,9 +18,7 @@ def ler_cfg():
 dados = ler_cfg()
 SID = dados.get("server_id")
 LISTA_CMD = dados.get("comandos", ["ping"])
-# ==================================================================
-# CLASSE
-# ==================================================================
+# ------------- CLASSE ------------- #
 class CmdBase(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
