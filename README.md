@@ -33,6 +33,8 @@ Jeff/
 │   └── events.py        # Eventos do bot
 └── res/assets/
     └── config.json      # Configurações
+    └── infos_secrets.env # Arquivo .env com informacoes sensiveis (token, etc...)
+
 ```
 
 ## Como usar
