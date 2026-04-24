@@ -31,6 +31,7 @@ class CmdBase(commands.Cog):
         print(f"{Fore.GREEN}[CMD] Cog de comandos carregada.{Style.RESET_ALL}")
 
     @app_commands.command(name="ping", description="Teste de latência")
+    @app_commands.guilds(discord.Object(id=SID))
     async def cmd_ping(self, inter: discord.Interaction):
         if "ping" not in LISTA_CMD:
             await inter.response.send_message("Comando desativado.", ephemeral=True)

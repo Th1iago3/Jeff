@@ -39,7 +39,7 @@ class SystemMonitor(commands.Cog):
         if SERVER_ID:
             try:
                 guild_obj = discord.Object(id=SERVER_ID)
-                self.bot.tree.clear_commands(guild=guild_obj)
+                #self.bot.tree.clear_commands(guild=guild_obj)
                 await self.bot.tree.sync(guild=guild_obj)
                 print(f"{Fore.GREEN}[SYNC] Comandos sincronizados e limpos.{Style.RESET_ALL}")
             except Exception as e:
