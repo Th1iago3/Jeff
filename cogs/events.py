@@ -7,14 +7,11 @@ from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 from colorama import Fore, Style
-# ------------------------------------------------------------------
-# CONFIGS
-# ------------------------------------------------------------------
+# ------------- CONFIG ------------- #
 BASE_DIR = Path(__file__).resolve().parent.parent
 ASSETS_DIR = BASE_DIR / "res" / "assets"
 ENV_PATH = ASSETS_DIR / "infos_secrets.env"
 CONFIG_PATH = ASSETS_DIR / "config.json"
-
 load_dotenv(ENV_PATH)
 
 def carregar_config():
@@ -39,7 +36,7 @@ class SystemMonitor(commands.Cog):
         if SERVER_ID:
             try:
                 guild_obj = discord.Object(id=SERVER_ID)
-                #self.bot.tree.clear_commands(guild=guild_obj)
+                await self.bot.tree.clear_commands(guild=guild_obj)
                 await self.bot.tree.sync(guild=guild_obj)
                 print(f"{Fore.GREEN}[SYNC] Comandos sincronizados e limpos.{Style.RESET_ALL}")
             except Exception as e:
