@@ -8,6 +8,8 @@
         "aviso": "#FFA500"
     },
    "comandos":[
-      "ping"
+      "ping",
+      "vermissoes",
+      "perfil"
    ]
 }
