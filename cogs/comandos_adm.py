@@ -2,10 +2,9 @@ import os
 import sys
 import json
 from pathlib import Path
-
 import discord
 from discord.ext import commands
-
+# ------------- CONFIG ------------- #
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG_PATH = BASE_DIR / "res" / "assets" / "config.json"
 
@@ -21,7 +20,7 @@ config = ler_config()
 MODERADORES = {int(x) for x in config.get("moderadores", []) if str(x).isdigit()}
 CORES = config.get("cores_embed", {})
 
-
+# ------------- CLASSE ------------- #
 class AdminCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
