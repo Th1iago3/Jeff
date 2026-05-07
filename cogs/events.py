@@ -139,7 +139,7 @@ class SystemMonitor(commands.Cog):
             invite_url = "Indisponivel"
 
         guild = self.bot.get_guild(SERVER_ID) if SERVER_ID else None
-        await status_atividade(self.bot, "streaming", "a TV", "Jeff esta assistindo a TV", imagem=None, url="https://www.youtube.com/watch?v=NlPoPjPeyL0")
+        await status_atividade(self.bot, "streaming", "a TV", "Use: /perfil @usuario. [:", imagem=None, url="https://www.youtube.com/watch?v=NlPoPjPeyL0")
         print(f"{Fore.CYAN}{'='*50}")
         print(f"{Fore.CYAN}       SISTEMA ONLINE ")
         print(f"{Fore.CYAN}{'='*50}{Style.RESET_ALL}")
