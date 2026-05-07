@@ -2,7 +2,7 @@ import sys
 import subprocess
 import importlib.util
 import os
-
+# ------------ DEP. OBRIGATORIAS ------------ #
 def dep():
     dep_map = {
         "discord": "discord.py",
